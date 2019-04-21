@@ -7,9 +7,12 @@ print(screenHeight)
 
 
 while pyautogui.FAILSAFE == True:
-    pyautogui.moveTo((screenWdith - screenWdith / 18)+random.randint(0, 6) , screenHeight - screenHeight / 7, duration=1)
+    xMagic = ((screenWdith - screenWdith / 18)+random.randint(100, 210))
+    print(xMagic);
+    pyautogui.moveTo((xMagic), (screenHeight - screenHeight / 7)-random.randint(30, 500), duration=0.1+random.random())
     pyautogui.click()
-    pyautogui.PAUSE = 2.5
-    pyautogui.moveTo(screenWdith - screenWdith / 18, screenHeight - screenHeight / 5 , duration=1)
+   ## pyautogui.PAUSE = 0.1 + random.random()
+    pyautogui.moveTo((screenWdith - screenWdith / 18)+random.randint(120, 210), (screenHeight - screenHeight / 5)-random.randint(30, 405) , duration=0.1+random.random())
     pyautogui.click()
 
+pyautogui.screenshot()
