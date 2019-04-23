@@ -1,18 +1,24 @@
 import pyautogui
 import random
 screenWdith, screenHeight = pyautogui.size()
+magicSpellX = screenWdith - screenWdith / 18
+magicSpellY = screenHeight - screenHeight / 7
+print(magicSpellX)
+print(magicSpellY)
 print(screenWdith)
 print(screenHeight)
-##move mouse to high alch spell
 
+itemX = (screenWdith - screenWdith / 18)
+itemY = (screenHeight - screenHeight / 5)
 
 while pyautogui.FAILSAFE == True:
-    xMagic = ((screenWdith - screenWdith / 18)+random.randint(100, 210))
-    print(xMagic);
-    pyautogui.moveTo((xMagic), (screenHeight - screenHeight / 7)-random.randint(30, 500), duration=0.1+random.random())
+    xSpell = magicSpellX+random.randint(-3, 18)
+    ySpell = magicSpellY+random.randint(-15, 5)
+    pyautogui.moveTo(xSpell, ySpell, duration=1.0+random.random())
     pyautogui.click()
-   ## pyautogui.PAUSE = 0.1 + random.random()
-    pyautogui.moveTo((screenWdith - screenWdith / 18)+random.randint(120, 210), (screenHeight - screenHeight / 5)-random.randint(30, 405) , duration=0.1+random.random())
+    pyautogui.PAUSE = .3 + random.random()
+    xItem = itemX+random.randint(-3, 20)
+    yItem = itemY+random.randint(-20,0)
+    pyautogui.moveTo(xItem, yItem, duration=1.0+random.random())
     pyautogui.click()
-
-pyautogui.screenshot()
+    pyautogui.PAUSE = .3 + random.random()
