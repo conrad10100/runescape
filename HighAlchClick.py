@@ -23,12 +23,12 @@ def movement():
     xOffCurve = (xSpell+xItem)/2
     yOffCurve = (ySpell+yItem)/2
 
-    pyautogui.moveTo(xSpell, ySpell, duration=1.0 + random.random())
+    pyautogui.mouseDown(xSpell, ySpell, duration=1.0 + random.random())
     pyautogui.click()
     pyautogui.PAUSE = .3 + random.random()
     for t in range(0,1):
-        xSpellToItem = xMidPoint + (1 - t) * (1 - t) * (xSpell - xMidPoint) + t * t * (xItem - xMidPoint)
-        ySpellToItem = yMidPoint + (1 - t) * (1 - t) * (ySpell - yMidPoint) + t * t * (yItem - yMidPoint)
+        xSpellToItem = xOffCurve + (1 - t) * (1 - t) * (xSpell - xOffCurve) + t * t * (xItem - xOffCurve)
+        ySpellToItem = yOffCurve + (1 - t) * (1 - t) * (ySpell - yOffCurve) + t * t * (yItem - yOffCurve)
         pyautogui.moveTo(xSpellToItem,ySpellToItem, duration=0, pause=None)
 
 
